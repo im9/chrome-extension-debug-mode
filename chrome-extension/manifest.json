@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Debug mode",
+  "version": "0.1.0",
+  "description": "Debug mode のクエリパラメータとクッキーを付与する",
+  "page_action": {
+    "default_title": "Debug mode",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/im9/chrome-extension-debug-mode/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "cookies",
+    "tabs",
+    "activeTab",
+    "https://github.com/im9/chrome-extension-debug-mode/*"
+  ]
+}
